@@ -1,0 +1,411 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Treeset Data Structure</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="treeset"
+                  title="Treeset Data Structure"
+                  environment="web"
+                  feedback-link="https://github.com/Jean-Dv/codelabs-treeset/blob/master/markdown/treeset">
+    
+      <google-codelab-step label="Método 
+add(O object)" duration="1">
+        <h2 is-upgraded>Paso a paso</h2>
+<p>El método <code>add</code> se utiliza para agregar un elemento al conjunto o colección. Aquí explicaremos cómo funciona visualmente paso a paso:</p>
+<h3 is-upgraded>Paso 1: Inserción del primer elemento</h3>
+<p>Supongamos que tenemos un TreeSet vacío y queremos agregar el elemento &#34;C&#34;. En este caso, el árbol se vería así:</p>
+<p class="image-container"><img alt="Tree with C" src="img/7d0df9f7b86468ea.png"></p>
+<h3 is-upgraded>Paso 2: Inserción del segundo elemento</h3>
+<p>Ahora, si queremos agregar el elemento &#34;A&#34;, se compara con el elemento existente (&#34;C&#34;) y se decide que &#34;A&#34; es menor, por lo que se coloca a la izquierda:</p>
+<p class="image-container"><img alt="Tree C and A" src="img/20c221d0e78f824a.png"></p>
+<h3 is-upgraded>Paso 3: Inserción del tercer elemento</h3>
+<p>Añadimos el elemento &#34;B&#34;, que es mayor que &#34;A&#34; pero menor que &#34;C&#34;, por lo que se coloca a la derecha de &#34;A&#34; y a la izquierda de &#34;C&#34;:</p>
+<p class="image-container"><img alt="Tree C, A, B" src="img/b3c4bd3272585927.png"></p>
+<h2 is-upgraded>Complejidad temporal:</h2>
+<p>La complejidad temporal de <code>add</code> en un TreeSet es O(log N), donde N es el número de elementos en el conjunto. Debido a la estructura del árbol de busqueda binaria, las inserciones se realizan eficientemente.</p>
+<h2 is-upgraded>Ejemplo de código:</h2>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;String&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos usando el método add
+        treeSet.add(&#34;C&#34;);
+        treeSet.add(&#34;A&#34;);
+        treeSet.add(&#34;B&#34;);
+
+        // Mostrar el TreeSet
+        System.out.println(&#34;TreeSet: &#34; + treeSet);
+    }
+}
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método <code>add</code> mantiene la propiedad de orden en el TreeSet, asegurando que los elementos se ubiquen correctamente en el árbol.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+addAll(Collection&lt;? extends E&gt; c)" duration="1">
+        <h2 is-upgraded>Paso a paso</h2>
+<h3 is-upgraded>Paso 1: Creación de TreeSet y Collection</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        TreeSet&lt;String&gt; treeSet = new TreeSet&lt;&gt;();
+        treeSet.add(&#34;A&#34;);
+        treeSet.add(&#34;B&#34;);
+        treeSet.add(&#34;C&#34;);
+        Collection&lt;String&gt; collection = new ArrayList&lt;&gt;();
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Agregar elementos a la colección</h3>
+<pre><code language="language-java" class="language-java">collection.add(&#34;D&#34;);
+collection.add(&#34;E&#34;);
+collection.add(&#34;F&#34;);
+</code></pre>
+<h3 is-upgraded>Paso 3: Uso del método <code>addAll</code></h3>
+<pre><code language="language-java" class="language-java">treeSet.addAll(collection);
+</code></pre>
+<h2 is-upgraded>Funcionamiento en un árbol de busqueda binaria</h2>
+<p>Antes de ejecutar el método <code>addAll</code>, el árbol se ve así:</p>
+<p class="image-container"><img alt="Tree C, A, B" src="img/b3c4bd3272585927.png"></p>
+<p>Después de ejecutar el método <code>addAll</code>, el árbol se ve así:</p>
+<p class="image-container"><img alt="Tree C, A, B" src="img/dbcd5bd4cb7dcccb.png"></p>
+<h2 is-upgraded>Complejidad temporal:</h2>
+<p>La complejidad temporal de addAll en un TreeSet depende de la cantidad de elementos en la colección a agregar. Si la colección tiene N elementos, la complejidad sería O(N * log N).</p>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método addAll permite agregar todos los elementos de una colección al TreeSet, manteniendo la propiedad de orden en el árbol de búsqueda binaria.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+ceiling(E e)" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+clear()" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+clone()" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+comparator()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación de TreeSet con comparador personalizado</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+import java.util.Comparator;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet con comparador personalizado (orden inverso)
+        TreeSet&lt;String&gt; treeSet = new TreeSet&lt;&gt;(Comparator.reverseOrder());
+
+        // Agregar elementos al TreeSet
+        treeSet.add(&#34;C&#34;);
+        treeSet.add(&#34;A&#34;);
+        treeSet.add(&#34;B&#34;);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>comparator</code></h3>
+<pre><code language="language-java" class="language-java">Comparator&lt;String&gt; comparator = treeSet.comparator();
+System.out.println(&#34;Comparador: &#34; + comparator);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>En este ejemplo, el comparador utilizado es <code>Comparator.reverseOrder()</code>, lo que significa que los elementos se ordenarán en orden inverso al orden natural.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">Comparador: java.util.Collections$ReverseComparator@hashcode
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<ul>
+<li>Si se utiliza un comparador personalizado, el método <code>comparator</code> devolverá ese comparador</li>
+<li>Si no se proporciona un comparador al crear el <code>TreeSet</code>, el método <code>comparator</code> devolvera <code>null</code>, indicando que se está utilizando el orden natural de los elementos.</li>
+</ul>
+<h2 is-upgraded>Nota adicional:</h2>
+<p>Si el conjunto se creó utilizando el orden natural de los elementos, <code>comparator</code> devolverá <code>null</code>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+contains(Object o)" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+descendingIterator?()" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+descendingSet()" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+first()" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+floor?(E e)" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+headSet(Object toElement)" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+higher(E e)" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+isEmpty()" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+iterator()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación de TreeSet y agregar elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+import java.util.Iterator;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;String&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(&#34;C&#34;);
+        treeSet.add(&#34;A&#34;);
+        treeSet.add(&#34;B&#34;);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>iterator</code></h3>
+<pre><code language="language-java" class="language-java">Iterator&lt;String&gt; iterator = treeSet.iterator();
+
+// Iterar sobre los elementos e imprimirlos
+while (iterator.hasNext()) {
+    System.out.println(iterator.next());
+}
+
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método <code>iterator</code> devuelve un iterador que proporciona acceso a los elementos en el <code>TreeSet</code>. En este caso, al imprimir los elementos, se mostrarán en orden ascendente debido a la naturaleza del árbol de búsqueda binaria.</p>
+<p>Resultado esperado:</p>
+<pre><code>A
+B
+C
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<ul>
+<li>El método <code>iterator</code> proporciona un iterador que permite recorrer los elementos del <code>TreeSet</code> en orden ascendente.</li>
+</ul>
+<h2 is-upgraded>Nota adicional:</h2>
+<ul>
+<li>Puedes utilizar un bucle <code>for</code> mejorado (<code>foreach</code>) para simplificar el código al iterar sobre el <code>TreeSet</code>.</li>
+</ul>
+<pre><code language="language-java" class="language-java">for (String element : treeSet) {
+    System.out.println(element);
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+last()" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+lower(E e)" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+pollFirst()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación de TreeSet y agregar elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(5);
+        treeSet.add(2);
+        treeSet.add(8);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>pollFirst()</code></h3>
+<pre><code language="language-java" class="language-java">Integer firstElement = treeSet.pollFirst();
+
+// Imprimir el primer elemento (o null si el conjunto estaba vacío)
+System.out.println(&#34;Primer elemento: &#34; + firstElement);
+
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método pollFirst devuelve y elimina el primer elemento del conjunto. En este caso, dado que hemos agregado los números 5, 2, y 8, el primer elemento será 2.</p>
+<p>Resultado esperado:</p>
+<pre><code>Primer elemento: 2
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<ul>
+<li>El método pollFirst es útil para obtener y eliminar el elemento más bajo del conjunto.</li>
+<li>Devolverá null si el conjunto está vacío.</li>
+</ul>
+<h2 is-upgraded>Nota adicional:</h2>
+<p>Debido a que el elemento a eliminar con <code>pollFirst</code> siempre será el primer elemento ordenado, por lo tanto, este elemento se encuentra en la hoja (leaf) del árbol. Al eliminar, no se necesitaria reorganizar todo el árbol, debido a que este elemento se encuentra sin &#34;hijos&#34; por así decirlo.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+pollLast()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación de TreeSet y agregar elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(5);
+        treeSet.add(2);
+        treeSet.add(8);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>pollLast()</code></h3>
+<pre><code language="language-java" class="language-java">Integer lastElement = treeSet.pollLast();
+
+// Imprimir el último elemento (o null si el conjunto estaba vacío)
+System.out.println(&#34;Último elemento: &#34; + lastElement);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método <code>pollLast</code> devuelve y elimina el último elemento del conjunto. En este caso, dado que hemos agregado los números 5, 2, y 8, el último elemento será 8.</p>
+<pre><code>Último elemento: 8
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<ul>
+<li>El método pollLast es útil para obtener y eliminar el elemento más alto del conjunto.</li>
+<li>Devolverá null si el conjunto está vacío.</li>
+</ul>
+<h2 is-upgraded>Nota adicional:</h2>
+<p>Debido a que el elemento a eliminar con <code>pollLast</code> siempre será el último elemento ordenado, por lo tanto, este elemento se encuentra en la hoja (leaf) del árbol. Al eliminar, no se necesitaria reorganizar todo el árbol, debido a que este elemento se encuentra sin &#34;hijos&#34; por así decirlo.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método remove(Object o)" duration="2">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación de TreeSet y agregar elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(5);
+        treeSet.add(2);
+        treeSet.add(8);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>remove</code></h3>
+<pre><code language="language-java" class="language-java">boolean removed = treeSet.remove(2);
+
+// Imprimir si el elemento fue eliminado
+System.out.println(&#34;¿Se eliminó el elemento? &#34; + removed);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método remove elimina el elemento específico del conjunto. En este caso, al eliminar el número 2, el árbol se reorganizará adecuadamente.</p>
+<p>Resultado esperado:</p>
+<pre><code>¿Se eliminó el elemento? true
+</code></pre>
+<h3 is-upgraded>Estado del árbol después de <code>remove(2)</code></h3>
+<p>Antes de la eliminación:</p>
+<p class="image-container"><img alt="Tree initial with number" src="img/fa347dbf023f55a.png"></p>
+<p>Después de la eliminación:</p>
+<p class="image-container"><img alt="Tree remove" src="img/79561b6888d9374a.png"></p>
+<h2 is-upgraded>Caso especial: elemento a eliminar como root</h2>
+<p>Si el elemento a eliminar es la raíz, la reorganización del árbol puede afectar a sus subárboles. Por ejemplo, si eliminamos el 5:</p>
+<p>Antes de la eliminación</p>
+<p class="image-container"><img alt="Tree initial with number" src="img/fa347dbf023f55a.png"></p>
+<p>Después de la eliminación</p>
+<p class="image-container"><img alt="Tree initial with number" src="img/c4148d004d510b7d.png"></p>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método <code>remove</code> elimina el elemento específico del conjunto y reorganiza el árbol de búsqueda binaria en consecuencia.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

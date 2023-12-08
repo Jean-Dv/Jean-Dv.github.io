@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-12-08T15:36:11-05:00",
+  "id": "treeset",
+  "duration": 8,
+  "title": "Treeset Data Structure",
+  "summary": "",
+  "source": "treeset.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "code"
+  ],
+  "tags": [
+    "codejavadata-structures",
+    "web"
+  ],
+  "feedback": "https://github.com/Jean-Dv/codelabs-treeset/blob/master/markdown/treeset",
+  "url": "treeset"
+}
