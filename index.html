@@ -107,8 +107,45 @@ collection.add(&#34;F&#34;);
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-ceiling(E e)" duration="0">
-        
+ceiling(E e)" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(5);
+        treeSet.add(2);
+        treeSet.add(8);
+        treeSet.add(3);
+        treeSet.add(6);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>ceiling(E e)</code></h3>
+<pre><code language="language-java" class="language-java"> // Obtener el elemento igual o mayor al elemento especificado
+Integer ceilingElement = treeSet.ceiling(4);
+
+// Imprimir el elemento obtenido (o null si no hay elemento mayor o igual)
+System.out.println(&#34;Elemento igual o mayor a 4: &#34; + ceilingElement);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método <code>ceiling(e)</code> devuelve el elemento igual o mayor al elemento especificado (e). En este caso, dado que hemos agregado los números 5, 2, 8, 3 y 6, el elemento igual o mayor a 4 es 5.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">Elemento igual o mayor a 4: 5
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método <code>ceiling(e)</code> es útil para encontrar el primer elemento igual o mayor al valor especificado en el conjunto.</p>
+<h2 is-upgraded>Nota adicional:</h2>
+<ul>
+<li>Si no hay un elemento igual o mayor al especificado, el método devuelve null.</li>
+<li>Este método puede ser especialmente útil cuando se necesita encontrar el siguiente elemento más grande o igual en un conjunto ordenado.</li>
+</ul>
+
 
       </google-codelab-step>
     
@@ -182,26 +219,256 @@ descendingSet()" duration="0">
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-first()" duration="0">
-        
+first()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreesetExample {
+    public static void main(String[] args) {
+        // Crea a un TreeSet
+        TreeSet&lt;Integer&gt; tree = new TreeSet&lt;Integer&gt;();
+
+        // Agrega elementos
+        tree.add(14);
+        tree.add(8);
+        tree.add(200);
+        tree.add(48);
+        tree.add(7);
+        tree.add(124);
+    }
+}
+
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>first</code></h3>
+<pre><code language="language-java" class="language-java"> // Mostrando el elemento más bajo del Treeset
+    System.out.println(&#34;El primer elemento es: &#34; + tree.first());
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método devuelve el elemento más bajo en el Treeset. Si los elementos son de tipo cadena, se verifican en orden alfabético y si los elementos son de tipo entero, se devuelve el número entero más pequeño, en este caso el 7</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">El primer elemento es: 7
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<ul>
+<li>El método first() es útil para obtener el primer elemento del conjunto.</li>
+<li>A diferencia de <code>pollFirst()</code>, <code>first()</code> no elimina el elemento del conjunto.</li>
+</ul>
+<h2 is-upgraded>Nota adicional:</h2>
+<p>El método <code>first()</code> en un TreeSet proporciona una manera eficiente de acceder al primer elemento del conjunto sin realizar ninguna modificación en la estructura del conjunto, permitiendo operaciones de solo lectura de manera eficiente.</p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-floor?(E e)" duration="0">
-        
+floor?(E e)" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(10);
+        treeSet.add(5);
+        treeSet.add(15);
+        treeSet.add(7);
+        treeSet.add(12);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>floor?(E e)</code></h3>
+<pre><code language="language-java" class="language-java">// Obtener el elemento igual o menor al elemento especificado
+Integer floorElement = treeSet.floor(9);
+
+// Imprimir el elemento obtenido (o null si no hay elemento menor o igual)
+System.out.println(&#34;Elemento igual o menor a 9: &#34; + floorElement);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método <code>floor?(E e)</code> devuelve el elemento igual o menor al elemento especificado (e). En este caso, dado que hemos agregado los números 10, 5, 15, 7 y 12, el elemento igual o menor a 9 es 7.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">Elemento igual o menor a 9: 7
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método <code>floor?(e)</code> es útil para encontrar el primer elemento igual o menor al valor especificado en el conjunto.</p>
+<h2 is-upgraded>Nota adicional:</h2>
+<p>Desde la perspectiva de la estructura del árbol subyacente en un TreeSet, el método <code>floor?(e)</code> busca el nodo más bajo en el árbol que sea igual o menor al valor especificado (e).</p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-headSet(Object toElement)" duration="0">
-        
+subSet(fromElement, toElement)" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(5);
+        treeSet.add(2);
+        treeSet.add(8);
+        treeSet.add(3);
+        treeSet.add(6);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>subSet(fromElement, toElement)</code></h3>
+<pre><code language="language-java" class="language-java">// Obtener un subconjunto desde el elemento de inicio hasta el elemento final (exclusivo)
+TreeSet&lt;Integer&gt; subSet = new TreeSet&lt;&gt;(treeSet.subSet(3, 6));
+
+// Imprimir el subconjunto
+System.out.println(&#34;Subconjunto desde el elemento 3 hasta el elemento 6 (exclusivo): &#34; + subSet);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método <code>subSet(fromElement, toElement)</code> devuelve un subconjunto del conjunto original que contiene todos los elementos mayores o iguales al elemento de inicio (fromElement) y estrictamente menores que el elemento final (toElement). En este caso, dado que hemos agregado los números 5, 2, 8, 3 y 6, el subconjunto contendrá los elementos 3 y 5.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">Subconjunto desde el elemento 3 hasta el elemento 6 (exclusivo): [3, 5]
+</code></pre>
+<p>Demostración en un árbol de busqueda binaria</p>
+<p class="image-container"><img alt="Tree 5, 2, 8, 3, 6" src="img/53efe71f7bb36803.png"></p>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método <code>subSet(fromElement, toElement)</code> es útil para obtener un subconjunto que abarca desde el elemento de inicio (inclusive) hasta el elemento final (exclusivo).</p>
+<h2 is-upgraded>Nota adicional:</h2>
+<p>Al emplear <code>subSet(fromElement, toElement)</code>, es crucial recordar que el elemento final (toElement) no se incluirá en el subconjunto resultante. Este método es efectivo cuando necesitas una porción específica del conjunto original, delimitada por dos valores</p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-higher(E e)" duration="0">
-        
+tailSet(fromElement)" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(5);
+        treeSet.add(2);
+        treeSet.add(8);
+        treeSet.add(3);
+        treeSet.add(6);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>tailSet(fromElement)</code></h3>
+<pre><code language="language-java" class="language-java">// Obtener un subconjunto desde el elemento especificado (inclusivo)
+TreeSet&lt;Integer&gt; tailSet = new TreeSet&lt;&gt;(treeSet.tailSet(3));
+
+// Imprimir el subconjunto
+System.out.println(&#34;Subconjunto desde el elemento 3 (inclusivo): &#34; + tailSet);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método <code>tailSet(fromElement)</code> devuelve un subconjunto del conjunto original que contiene todos los elementos mayores o iguales al elemento especificado (fromElement). En este caso, dado que hemos agregado los números 5, 2, 8, 3 y 6, el subconjunto contendrá los elementos 3, 5, 6 y 8.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">Subconjunto desde el elemento 3 (inclusivo): [3, 5, 6, 8]
+</code></pre>
+<p>Demostración en un árbol de busqueda binaria</p>
+<p class="image-container"><img alt="Tree 5, 2, 8, 3, 6" src="img/c2dae44c69d78d8c.png"></p>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método <code>tailSet(fromElement)</code> es útil para obtener un subconjunto que contiene todos los elementos mayores o iguales al elemento especificado.</p>
+<h2 is-upgraded>Nota adicional:</h2>
+<ul>
+<li>Al utilizar <code>tailSet(fromElement)</code>, es esencial recordar que el subconjunto devuelto incluirá el elemento especificado (fromElement). Este método es útil cuando necesitas todos los elementos mayores o iguales a un valor particular en el conjunto original.</li>
+<li>Similar a <code>headSet(toElement)</code>, el subconjunto devuelto es una vista respaldada por el conjunto original. Cualquier cambio en el conjunto original se reflejará en el subconjunto y viceversa. Esta característica permite trabajar eficientemente con porciones específicas del conjunto sin duplicar datos.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+headSet(Object toElement)" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(5);
+        treeSet.add(2);
+        treeSet.add(8);
+        treeSet.add(3);
+        treeSet.add(6);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>headSet(toElement)</code></h3>
+<pre><code language="language-java" class="language-java">// Obtener un subconjunto hasta el elemento especificado
+TreeSet&lt;Integer&gt; headSet = new TreeSet&lt;&gt;(treeSet.headSet(6));
+
+// Imprimir el subconjunto
+System.out.println(&#34;Subconjunto hasta el elemento 6: &#34; + headSet);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método <code>headSet(toElement)</code> devuelve un subconjunto del conjunto original que contiene todos los elementos estrictamente menores que el elemento especificado (toElement). En este caso, dado que hemos agregado los números 5, 2, 8, 3 y 6, el subconjunto contendrá los elementos 2, 3 Y 5.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">Subconjunto hasta el elemento 6 (exclusivo): [2, 3, 5]
+</code></pre>
+<p>Demostración en un árbol de busqueda binaria</p>
+<p class="image-container"><img alt="Tree 5, 2, 8, 3, 6" src="img/8b3e7d168acb25c5.png"></p>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método headSet(toElement) es útil para obtener un subconjunto que contiene todos los elementos estrictamente menores que el elemento especificado.</p>
+<h2 is-upgraded>Nota adicional:</h2>
+<p>El subconjunto devuelto es una vista respaldada por el conjunto original, por lo que cualquier cambio en el conjunto original se reflejará en el subconjunto y viceversa.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Método 
+higher(E e)" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Crear un TreeSet
+        TreeSet&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+
+        // Agregar elementos al TreeSet
+        treeSet.add(10);
+        treeSet.add(5);
+        treeSet.add(15);
+        treeSet.add(7);
+        treeSet.add(12);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>higher(E e)</code></h3>
+<pre><code language="language-java" class="language-java">// Obtener el primer elemento estrictamente mayor al elemento especificado
+Integer higherElement = treeSet.higher(9);
+
+// Imprimir el elemento obtenido
+System.out.println(&#34;Primer elemento estrictamente mayor a 9: &#34; + higherElement);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método <code>higher(E e)</code> devuelve el primer elemento estrictamente mayor al elemento especificado (e). En este caso, dado que hemos agregado los números 10, 5, 15, 7 y 12, el primer elemento estrictamente mayor a 9 es 10.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">Primer elemento estrictamente mayor a 9: 10
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método <code>higher(e)</code> es útil para encontrar el primer elemento estrictamente mayor al valor especificado en el conjunto.</p>
+<h2 is-upgraded>Nota adicional:</h2>
+<ul>
+<li>Si no hay un elemento estrictamente mayor al especificado, el método devuelve null.</li>
+<li>Este método es eficiente en conjuntos ordenados, ya que aprovecha la estructura jerárquica del árbol para realizar búsquedas de manera eficaz.</li>
+</ul>
+
 
       </google-codelab-step>
     
@@ -263,8 +530,47 @@ C
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-last()" duration="0">
-        
+last()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h3 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h3>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+
+public class TreesetExample {
+    public static void main(String[] args) {
+        // Crea a un TreeSet
+        TreeSet&lt;Integer&gt; tree = new TreeSet&lt;Integer&gt;();
+
+        // Agrega elementos
+        tree.add(14);
+        tree.add(8);
+        tree.add(200);
+        tree.add(48);
+        tree.add(7);
+        tree.add(124);
+    }
+}
+
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>last</code></h3>
+<pre><code language="language-java" class="language-java">   // Obtener el último elemento
+    Integer lastElement = tree.last();
+
+    // Imprimir el último elemento
+    System.out.println(&#34;Último elemento: &#34; + lastElement);
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>El método <code>last()</code> devuelve el último elemento del conjunto sin eliminarlo. En este caso, el último elemento será 200.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">El último elemento es: 200
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<p>El método <code>last()</code> es útil para obtener el elemento más alto del conjunto sin eliminarlo.</p>
+<h2 is-upgraded>Nota adicional:</h2>
+<ul>
+<li>Si el conjunto está vacío, <code>last()</code> lanzará una excepción NoSuchElementException, por lo que es importante asegurarse de que el conjunto contenga elementos antes de llamar a este método.</li>
+<li>No hay impacto en la estructura del árbol ya que el método solo devuelve el último elemento sin realizar ninguna modificación en el conjunto original.</li>
+</ul>
+
 
       </google-codelab-step>
     
