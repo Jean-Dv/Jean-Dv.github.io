@@ -150,14 +150,110 @@ System.out.println(&#34;Elemento igual o mayor a 4: &#34; + ceilingElement);
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-clear()" duration="0">
-        
+clear()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h2 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h2>
+<pre><code language="language-java" class="language-java">import java.io.*;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+    public static void main(String args[])
+    {
+        // Creating an empty TreeSet
+        TreeSet&lt;String&gt; tree = new TreeSet&lt;String&gt;();
+
+        // Use add() method to add elements into the Set
+        tree.add(&#34;Welcome&#34;);
+        tree.add(&#34;To&#34;);
+        tree.add(&#34;Geeks&#34;);
+        tree.add(&#34;4&#34;);
+        tree.add(&#34;Geeks&#34;);
+        tree.add(&#34;TreeSet&#34;);
+
+        // Displaying the TreeSet
+        System.out.println(&#34;TreeSet: &#34; + tree);
+    }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>clear()</code></h3>
+<pre><code language="language-java" class="language-java">	 // Clearing the TreeSet using clear() method
+        tree.clear();
+
+        // Displaying the final tree
+        System.out.println(&#34;After clearing TreeSet: &#34; + tree);
+    }
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>se utiliza para eliminar todos los elementos de un TreeSet. El uso del método clear() solo borra todo el elemento del conjunto y no elimina el conjunto.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">TreeSet: [4, Geeks, To, TreeSet, Welcome]
+After clearing TreeSet: []
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<ul>
+<li>El propósito principal es proporcionar una forma conveniente de vaciar completamente el conjunto, eliminando todos los elementos existentes.</li>
+<li>Este método es útil cuando se desea restablecer o reiniciar el conjunto, y su invocación resultará en un conjunto vacío.</li>
+</ul>
+<h2 is-upgraded>Funcionamiento en un árbol de busqueda binaria</h2>
+<p>Arbol normal sin aplicar el metodo <img alt="TreeSet without clear" src="img/9e28b3fc8e644143.png"></p>
+<p>Arbol depues del metodo clear() <img alt="TreeSet with clear" src="img/d62dfd6f46d620d3.png"></p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-clone()" duration="0">
-        
+clone()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h2 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h2>
+<pre><code language="language-java" class="language-java">import java.io.*;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+    public static void main(String args[]) {
+        // Creating an empty TreeSet
+        TreeSet&lt;String&gt; tree = new TreeSet&lt;String&gt;();
+
+        // Use add() method to add elements into the Set
+        tree.add(&#34;Welcome&#34;);
+        tree.add(&#34;To&#34;);
+        tree.add(&#34;Geeks&#34;);
+        tree.add(&#34;4&#34;);
+        tree.add(&#34;Geeks&#34;);
+        tree.add(&#34;TreeSet&#34;);
+
+        // Displaying the TreeSet
+        System.out.println(&#34;TreeSet: &#34; + tree);
+   }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Uso del método <code>clone()</code></h3>
+<pre><code language="language-java" class="language-java">	 // Creating a new cloned set
+        TreeSet cloned_set = new TreeSet();
+
+        // Cloning the set using clone() method
+        cloned_set = (TreeSet)tree.clone();
+    }
+</code></pre>
+<h2 is-upgraded>Paso 3:imprimir en la consola el contenido del TreeSet clonado</h2>
+<p>// Displaying the cloned_set System.out.println(&#34;The cloned TreeSet: &#34; + cloned_set);</p>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>Se utiliza para devolver una copia superficial del conjunto de árboles mencionado. Simplemente crea una copia del conjunto.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">TreeSet: [4, Geeks, To, TreeSet, Welcome]
+The cloned TreeSet: [4, Geeks, To, TreeSet, Welcome]
+</code></pre>
+<p>Devuelve clon de la lista ingresada</p>
+<h2 is-upgraded>Conclusión:</h2>
+<ul>
+<li>Se crea un nuevo ‘TreeSet&#39;, pero los elementos dentro de este nuevo conjunto son los mismos objetos que los del conjunto original.No se clonan los elementos en sí.</li>
+</ul>
+<h2 is-upgraded>Nota adicional:</h2>
+<ul>
+<li>Dado que no se clonan los elementos, si se modifican los elementos en el conjunto clonado, esos cambios también se reflejarán en el conjunto original y viceversa.</li>
+</ul>
+<h2 is-upgraded>Funcionamiento en un árbol de busqueda binaria</h2>
+<p>(img/clone.png) <img alt="TreeSet clone" src="img/45ad9a5e0f96a5c7.png"></p>
+
 
       </google-codelab-step>
     
@@ -201,20 +297,189 @@ System.out.println(&#34;Comparador: &#34; + comparator);
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-contains(Object o)" duration="0">
-        
+contains(Object o)" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h2 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h2>
+<pre><code language="language-java" class="language-java">import java.io.*;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+    // Importing required classes
+import java.io.*;
+import java.util.TreeSet;
+
+// Main class
+public class GFG {
+
+    // Main driver method
+    public static void main(String args[])
+    {
+
+        // Creating an empty TreeSet of string type
+        TreeSet&lt;String&gt; tree = new TreeSet&lt;String&gt;();
+
+        // Adding elements in TreeSet
+        // Using add() method to
+        tree.add(&#34;Welcome&#34;);
+        tree.add(&#34;To&#34;);
+        tree.add(&#34;Geeks&#34;);
+        tree.add(&#34;4&#34;);
+        tree.add(&#34;Geeks&#34;);
+        tree.add(&#34;TreeSet&#34;);
+
+        // Displaying the TreeSet
+        System.out.println(&#34;TreeSet: &#34; + tree);
+   }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Compruebe si hay un elemento específico en el TreeSet anterior</h3>
+<pre><code>         usando el método contains() de la clase TreeSet
+</code></pre>
+<pre><code>// Printing a boolean value
+        System.out.println(
+            &#34;Does the Set contains &#39;TreeSet&#39;? &#34;
+            + tree.contains(&#34;TreeSet&#34;));
+    }
+}
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>se utiliza para comprobar si un elemento específico está presente en el TreeSet o no. Así que, básicamente, se utiliza para comprobar si un TreeSet contiene algún elemento en particular.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">TreeSet: [4, Geeks, To, TreeSet, Welcome]
+Does the Set contains &#39;TreeSet&#39;? true
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<ul>
+<li>La principal función del método ‘contains&#39; en un ‘TreeSet&#39; es verificar si un elemento específico está presente en el conjunto. El método devuelve ‘true&#39; si el elemento está presente y ‘false&#39; en caso contrario.</li>
+</ul>
+<h2 is-upgraded>Funcionamiento en un árbol de busqueda binaria</h2>
+<ol type="1">
+<li>Comienza en la raíz &#34;Welcome&#34;.</li>
+<li>Comparación: &#34;treeset&#34; se compara con &#34;Welcome&#34;. Dado que &#34;treeset&#34; es mayor lexicográficamente, la búsqueda se dirige hacia la derecha.</li>
+<li>Ahora estamos en el nodo &#34;To&#34;.</li>
+<li>Comparación: &#34;treeset&#34; se compara con &#34;To&#34;. Dado que &#34;treeset&#34; es mayor lexicográficamente, la búsqueda se dirige hacia la derecha.</li>
+<li>Ahora estamos en el nodo &#34;TreeSet&#34;.</li>
+<li>Comparación: &#34;treeset&#34; se compara con &#34;TreeSet&#34;. Dado que son iguales, se ha encontrado &#34;treeset&#34;.</li>
+</ol>
+<p>Arbol Normal <img alt="TreeSet contains" src="img/d928633da623c4fe.png"> Dspues de aplicar el metodo contains() <img alt="TreeSet contains" src="img/3d366dc300995e1.png"></p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-descendingIterator?()" duration="0">
-        
+descendingIterator?()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h2 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h2>
+<pre><code language="language-java" class="language-java">import java.util.*;
+
+public class GFG1 {
+    public static void main(String[] argv) throws Exception
+    {
+        try {
+
+            // create tree set object
+            TreeSet&lt;Integer&gt; treeadd = new TreeSet&lt;Integer&gt;();
+
+            // populate the TreeSet using add() method
+            treeadd.add(10);
+            treeadd.add(20);
+            treeadd.add(30);
+            treeadd.add(40);
+
+            // Print the TreeSet
+            System.out.println(&#34;TreeSet: &#34; + treeadd);
+   }
+}
+</code></pre>
+<h3 is-upgraded>Paso 2: Creación el Iterador Descendente usando el metodo descendingIterator()</h3>
+<pre><code language="language-java" class="language-java">// Printing a boolean value
+     Iterator&lt;Integer&gt;iterator = treeadd.descendingIterator();
+    }
+}
+</code></pre>
+<h2 is-upgraded>paso 3: Impresión de los Valores Utilizando el Iterador Descendente</h2>
+<pre><code language="language-java" class="language-java">System.out.println(&#34;\nValues using DescendingIterator:&#34;);
+while (iterator.hasNext()) {
+    System.out.println(&#34;Value : &#34; + iterator.next());
+}
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>se utiliza para devolver un iterador sobre los elementos de este conjunto en orden descendente.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">TreeSet: [10, 20, 30, 40]
+
+Values using DescendingIterator:
+Value : 40
+Value : 30
+Value : 20
+Value : 10
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<ul>
+<li>Este método es útil cuando se necesita recorrer los elementos en dirección opuesta al orden natural del conjunto.</li>
+</ul>
+<h2 is-upgraded>Funcionamiento en un árbol de busqueda binaria</h2>
+<p>Arbol antes de aplicar el metodo desendinfIterator() <img alt="TreeSet descendingIterator" src="img/c7808de73258f4bc.png"> Despues de aplicar el metodo desendingIterator() <img alt="TreeSet descendingIterator" src="img/4019f465ec715df.png"></p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-descendingSet()" duration="0">
-        
+descendingSet()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h2 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h2>
+<pre><code language="language-java" class="language-java">import java.util.*;
+
+public class GFG1 {
+    public static void main(String[] argv)
+        throws Exception
+    {
+        try {
+
+            // create tree set object
+            TreeSet&lt;String&gt; treeadd = new TreeSet&lt;String&gt;();
+
+            // populate the TreeSet using add() method
+            treeadd.add(&#34;A&#34;);
+            treeadd.add(&#34;B&#34;);
+            treeadd.add(&#34;C&#34;);
+            treeadd.add(&#34;D&#34;);
+
+            // Print the TreeSet
+            System.out.println(&#34;TreeSet: &#34; + treeadd);
+</code></pre>
+<h3 is-upgraded>Paso 2: Creación el Iterador Descendente usando el metodo descendingSet()</h3>
+<pre><code language="language-java" class="language-java"> NavigableSet&lt;String&gt;treereverse = treeadd.descendingSet();
+
+ // getting iterated view of NavigableSet
+ Iterator&lt;String&gt; iterator = treereverse.iterator();
+
+</code></pre>
+<h2 is-upgraded>paso 3: Impresión de los Valores</h2>
+<pre><code language="language-java" class="language-java">System.out.println(&#34;\nValues using DescendingSet:&#34;);
+
+            // printing the integrated value
+            while (iterator.hasNext()) {
+                System.out.println(&#34;Value : &#34;
+                                   + iterator.next());
+            }
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>se utiliza para devolver una vista en orden inverso de los elementos contenidos en este conjunto. El conjunto descendente está respaldado por este conjunto, por lo que los cambios en el conjunto se reflejan en el conjunto descendente y viceversa</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">TreeSet: [A, B, C, D]
+
+Values using DescendingSet:
+Value : D
+Value : C
+Value : B
+Value : A
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<p>-Devuelve una vista reversa del conjunto original, ordenada en orden descendente. Es importante destacar que descendingSet no crea un nuevo conjunto, sino que proporciona una vista inversa del conjunto existente. Cualquier cambio en el conjunto original se reflejará en la vista descendente y viceversa.</p>
+<h2 is-upgraded>Funcionamiento en un árbol de busqueda binaria</h2>
+<p>Arbol antes de aplicar el metodo desendingSet() <img alt="TreeSet descendingIterator" src="img/e3d65bc3109cdbe1.png"> Despues de aplicar el metodo desendingSet() <img alt="TreeSet with clear" src="img/91cbf60900d95e9d.png"></p>
+
 
       </google-codelab-step>
     
@@ -473,8 +738,45 @@ System.out.println(&#34;Primer elemento estrictamente mayor a 9: &#34; + higherE
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-isEmpty()" duration="0">
-        
+isEmpty()" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h2 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h2>
+<pre><code language="language-java" class="language-java">import java.util.*;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+    public static void main(String args[])
+    {
+        // Creating an empty HashSet
+        TreeSet&lt;String&gt; tree = new TreeSet&lt;String&gt;();
+
+        // Use add() method to add elements into the Set
+        tree.add(&#34;Welcome&#34;);
+        tree.add(&#34;To&#34;);
+        tree.add(&#34;Geeks&#34;);
+        tree.add(&#34;4&#34;);
+        tree.add(&#34;Geeks&#34;);
+        tree.add(&#34;TreeSet&#34;);
+
+        // Displaying the TreeSet
+        System.out.println(&#34;TreeSet: &#34; + tree);
+</code></pre>
+<h3 is-upgraded>Paso 2:Verificación si el conjunto está vacío</h3>
+<pre><code language="language-java" class="language-java"> // Check for the empty set
+        System.out.println(&#34;Is the set empty? &#34; + tree.isEmpty());
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>se utiliza para comprobar y verificar si un TreeSet está vacío o no. Devuelve True si el TreeSet está vacío, de lo contrario devuelve False.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">TreeSet: [4, Geeks, To, TreeSet, Welcome]
+Is the set empty? false
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<p>-Método isEmpty en un TreeSet es que proporciona una forma conveniente de verificar si el conjunto está vacío o no. El método devuelve true si el conjunto no contiene elementos y false si tiene al menos un elemento.</p>
+<h2 is-upgraded>Demostración en un árbol de busqueda binaria:</h2>
+<p>La operación isEmpty() simplemente verificará si el TreeSet tiene al menos un elemento, es decir, si la raíz del árbol (el nodo &#34;Welcome&#34;) no es null.</p>
+<p class="image-container"><img alt="TreeSet with clear" src="img/a73ca1b3805501be.png"></p>
+
 
       </google-codelab-step>
     
@@ -575,8 +877,42 @@ public class TreesetExample {
       </google-codelab-step>
     
       <google-codelab-step label="Método 
-lower(E e)" duration="0">
-        
+lower(E e)" duration="1">
+        <h2 is-upgraded>Paso a paso:</h2>
+<h2 is-upgraded>Paso 1: Creación del Treeset y agrega elementos</h2>
+<pre><code language="language-java" class="language-java">import java.util.TreeSet;
+public class GFG {
+    public static void main(String args[])
+    {
+        TreeSet&lt;Integer&gt; tree = new TreeSet&lt;Integer&gt;();
+
+        // Add elements to this TreeSet
+        tree.add(10);
+        tree.add(5);
+        tree.add(8);
+        tree.add(1);
+        tree.add(11);
+        tree.add(3);
+</code></pre>
+<h3 is-upgraded>Paso 2:Llamar al metodo tree.lower con la condicion deseada</h3>
+<pre><code language="language-java" class="language-java"> System.out.println(tree.lower(15));
+</code></pre>
+<h2 is-upgraded>Funcionamiento del método:</h2>
+<p>se utiliza para devolver el elemento más grande de este conjunto que es estrictamente menor que el elemento dado.</p>
+<p>Resultado esperado:</p>
+<pre><code language="language-java" class="language-java">11
+</code></pre>
+<h2 is-upgraded>Conclusión:</h2>
+<p>-El propósito principal de lower es obtener el elemento más grande en el TreeSet que sea estrictamente menor que el valor proporcionado como argumento.</p>
+<ul>
+<li>el método tree.lower(elemento) en un TreeSet de Java devuelve el mayor elemento estrictamente menor que el valor especificado (elemento)</li>
+</ul>
+<h2 is-upgraded>Funcionamiento en un arbol de busqueda binaria:</h2>
+<p>1.Comienzas en la raíz del árbol. 2.Comparas el elemento buscado con el elemento en el nodo actual. 3.Si son iguales, has encontrado el elemento y la búsqueda se completa. 4.Si el elemento buscado es menor que el elemento en el nodo actual, te mueves al subárbol izquierdo. 5.Si el elemento buscado es mayor que el elemento en el nodo actual, te mueves al subárbol derecho. 6.Se Repiten los pasos 2 y 3 hasta que encuentres el elemento buscado o llegues a un nodo que sea null, indicando que el elemento no está presente en el árbol.</p>
+<p>Arbol Normal <img alt="TreeSet with clear" src="img/5452ad5e33e79603.png"> Despues de aplicar el metodo lower() <img alt="TreeSet with clear" src="img/97ac28ef48d1d590.png"></p>
+<h2 is-upgraded>Nota adicional:</h2>
+<p>-Si no existe ningún elemento de este tipo en esta colección TreeSet, este método devuelve un valor NULL -Solo se necesita un parámetro ele. Es el elemento a partir del cual se determina el mayor valor del conjunto que es estrictamente menor que este valor.</p>
+
 
       </google-codelab-step>
     
